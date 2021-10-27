@@ -8,7 +8,8 @@ import {SafeAreaView, StatusBar} from 'react-native';
 import {enableScreens} from 'react-native-screens';
 import {Provider} from 'react-redux';
 import SwitchScreen from 'screens/SwitchScreen';
-import store from '@store/configureStore';
+import store from 'store/configureStore';
+// import SplashScreen from 'react-native-splash-screen'
 const navTheme = {
   ...DefaultTheme,
   colors: {
@@ -18,6 +19,10 @@ const navTheme = {
 };
 enableScreens();
 const AppLayout = () => {
+  // useEffect(() => {
+  //   SplashScreen.hide();
+  // })
+
   return (
     <Provider store={store}>
       {/* <SafeAreaView style={{ flex: 0, backgroundColor: 'white' }} />
