@@ -19,8 +19,8 @@ export const SettingStackContainer = (props: Props) => {
         name={RouteName.SETTING}
         component={HomeLayout}
         options={{
-          headerShown: true,
-          headerTitle: 'Setting',
+          headerTransparent: true,
+          headerTitle: '',
         }}
       />
     </Stack.Navigator>

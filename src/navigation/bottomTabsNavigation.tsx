@@ -14,7 +14,7 @@ export const TabContainer = (props: Props) => {
   return (
     <Tab.Navigator initialRouteName={RouteName.HOME}>
       <Tab.Screen
-        name={RouteName.HOME}
+        name={RouteName.HOMETAB}
         options={{
           tabBarLabel: 'Trang chủ',
           tabBarIcon: ({color, focused}) =>
@@ -41,10 +41,9 @@ export const TabContainer = (props: Props) => {
         component={HomeStackContainer}
       />
       <Tab.Screen
-        name={RouteName.SETTING}
+        name={RouteName.SETTINGTAB}
         options={({route, navigation}) => ({
           tabBarLabel: 'Cài đặt',
-          tabBarColor: '#FF7F50',
           tabBarIcon: ({color, focused}) =>
             focused ? (
               <Image
@@ -69,10 +68,9 @@ export const TabContainer = (props: Props) => {
         component={SettingStackContainer}
       />
       <Tab.Screen
-        name={RouteName.NOTIFICATION}
+        name={RouteName.NOTITAB}
         options={({route, navigation}) => ({
           tabBarLabel: 'Thông báo',
-          tabBarColor: '#3498DB',
           tabBarIcon: ({color, focused}) =>
             focused ? (
               <Image

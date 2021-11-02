@@ -83,7 +83,7 @@ const TextInputUI = (props: TextInputUIProps) => {
           maxLength={maxLength}
           editable={editable ?? true}
           value={textValue && textValue != '' ? textValue : value}
-          onChangeText={xText => {
+          onChangeText={(xText: string) => {
             setValueChange(xText);
             if (onChangeText) {
               onChangeText(xText);
@@ -138,7 +138,7 @@ const Container = styled.View``;
 const TextInputStyled = styled.TextInput`
   flex: 1;
   color: #39434c;
-  paddingvertical: 10px;
+  padding-vertical: 10px;
   height: 52px;
 `;
 const EyeStyled = styled.TouchableOpacity`

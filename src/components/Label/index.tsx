@@ -48,6 +48,7 @@ export interface LabelProps {
   b5?: any;
   numberOfLines?: number;
   transparent?: any;
+  onPress?: () => void;
 }
 
 const Label = (props: LabelProps) => {
@@ -97,6 +98,7 @@ const Label = (props: LabelProps) => {
     b5,
     transparent,
     numberOfLines,
+    onPress,
   } = props;
   const styleComponent = [
     flex && {flex: 1},
@@ -147,7 +149,10 @@ const Label = (props: LabelProps) => {
     transparent && {backgroundColor: 'transparent'},
   ];
   return (
-    <Container numberOfLines={numberOfLines} style={[styleComponent]}>
+    <Container
+      onPress={onPress}
+      numberOfLines={numberOfLines}
+      style={[styleComponent]}>
       {children}
     </Container>
   );
