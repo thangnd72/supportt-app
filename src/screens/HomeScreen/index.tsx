@@ -18,11 +18,10 @@ const HomeScreen = (props: UIProps) => {
       <MapboxGL.MapView
         style={{flex: 1}}
         styleURL={MapboxGL.StyleURL.Street}
-        zoomLevel={16}
-        centerCoordinate={[105.8066925, 15.9030623]}
-        showUserLocation={true}>
-        <MapboxGL.Camera zoomLevel={4} centerCoordinate={coordinates} />
-        <MapboxGL.PointAnnotation id="1" coordinate={coordinates} />
+        >
+        <MapboxGL.UserLocation />
+        <MapboxGL.Camera followZoomLevel={15} followUserLocation animationMode='flyTo' />
+        {/* <MapboxGL.PointAnnotation id="1" coordinate={coordinates} /> */}
       </MapboxGL.MapView>
       {/* <MapboxGL.MapView
         styleURL={MapboxGL.StyleURL.Street}

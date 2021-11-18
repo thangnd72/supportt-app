@@ -13,6 +13,8 @@ target 'SupportApp' do
   )
 
   pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
+  # pod 'Mapbox-iOS-SDK', '~> 4.11.2'
+
 
   target 'SupportAppTests' do
     inherit! :complete
@@ -21,6 +23,7 @@ target 'SupportApp' do
 
   pre_install do |installer|
     $RNMBGL.pre_install(installer)
+    $ReactNativeMapboxGLIOSVersion = '~> 6.1'
   end
 
   # Enables Flipper.
