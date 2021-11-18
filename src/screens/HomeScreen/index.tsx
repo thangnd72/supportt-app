@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import MapboxGL from '@react-native-mapbox-gl/maps';
 import {Layout, Label} from 'components';
@@ -11,9 +11,30 @@ interface UIProps {
   navigation: any;
 }
 const HomeScreen = (props: UIProps) => {
+  // the longitude comes first before the latitude
+  const [coordinates] = useState([105.8066925, 15.9030623]);
   return (
     <Layout style={{flex: 1}}>
-      <MapboxGL.MapView style={{flex: 1}} />
+      <MapboxGL.MapView
+        style={{flex: 1}}
+        styleURL={MapboxGL.StyleURL.Street}
+        zoomLevel={16}
+        centerCoordinate={[105.8066925, 15.9030623]}
+        showUserLocation={true}>
+        <MapboxGL.Camera zoomLevel={4} centerCoordinate={coordinates} />
+        <MapboxGL.PointAnnotation id="1" coordinate={coordinates} />
+      </MapboxGL.MapView>
+      {/* <MapboxGL.MapView
+        styleURL={MapboxGL.StyleURL.Street}
+        zoomLevel={16}
+        centerCoordinate={[105.8066925, 15.9030623]}
+        showUserLocation={true}
+        style={{flex: 1}}>
+        <MapboxGL.Camera
+          zoomLevel={16}
+          centerCoordinate={[105.8066925, 15.9030623]}></MapboxGL.Camera>
+        <MapboxGL.PointAnnotation id="1" coordinate={coordinates} />
+      </MapboxGL.MapView> */}
     </Layout>
   );
 };

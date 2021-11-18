@@ -12,6 +12,8 @@ target 'SupportApp' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
+
   target 'SupportAppTests' do
     inherit! :complete
     # Pods for testing
