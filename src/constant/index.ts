@@ -17,4 +17,5 @@ export const RouteName = {
   HOMETAB: 'Trang chủ',
   SETTINGTAB: 'Cài đặt',
   NOTITAB: 'Thông báo',
+  CHATTAB: 'Tin nhắn',
 };

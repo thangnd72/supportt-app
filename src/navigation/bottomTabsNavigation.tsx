@@ -41,9 +41,9 @@ export const TabContainer = (props: Props) => {
         component={HomeStackContainer}
       />
       <Tab.Screen
-        name={RouteName.SETTINGTAB}
+        name={RouteName.CHATTAB}
         options={({route, navigation}) => ({
-          tabBarLabel: 'Cài đặt',
+          // tabBarLabel: 'Cài đặt',
           tabBarIcon: ({color, focused}) =>
             focused ? (
               <Image
@@ -52,7 +52,7 @@ export const TabContainer = (props: Props) => {
                   height: sizes._22sdp,
                   tintColor: color,
                 }}
-                source={TabIcon.setting}
+                source={TabIcon.chat}
               />
             ) : (
               <Image
@@ -61,7 +61,7 @@ export const TabContainer = (props: Props) => {
                   height: sizes._18sdp,
                   tintColor: color,
                 }}
-                source={TabIcon.setting}
+                source={TabIcon.chat}
               />
             ),
         })}
@@ -93,6 +93,33 @@ export const TabContainer = (props: Props) => {
             ),
         })}
         component={NotificationStackContainer}
+      />
+      <Tab.Screen
+        name={RouteName.SETTINGTAB}
+        options={({route, navigation}) => ({
+          // tabBarLabel: 'Cài đặt',
+          tabBarIcon: ({color, focused}) =>
+            focused ? (
+              <Image
+                style={{
+                  width: sizes._22sdp,
+                  height: sizes._22sdp,
+                  tintColor: color,
+                }}
+                source={TabIcon.setting}
+              />
+            ) : (
+              <Image
+                style={{
+                  width: sizes._18sdp,
+                  height: sizes._18sdp,
+                  tintColor: color,
+                }}
+                source={TabIcon.setting}
+              />
+            ),
+        })}
+        component={SettingStackContainer}
       />
     </Tab.Navigator>
   );

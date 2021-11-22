@@ -11,6 +11,8 @@ export interface ButtonUIProps {
   marginHorizontal?: number;
   marginTop?: number;
   marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
   padding?: number;
   paddingHorizontal?: number;
   paddingVertical?: number;
@@ -47,6 +49,8 @@ const Button = (props: ButtonUIProps) => {
     marginHorizontal,
     marginTop,
     marginBottom,
+    marginLeft,
+    marginRight,
     padding,
     paddingHorizontal,
     paddingVertical,
@@ -75,12 +79,14 @@ const Button = (props: ButtonUIProps) => {
     activeOpacity,
   } = props;
   const styleComponent = [
-    flex && {height: '100%', width: '100%'},
+    flex && {flex: 1},
     margin && {margin: margin},
     marginVertical && {marginVertical: marginVertical},
     marginHorizontal && {marginHorizontal: marginHorizontal},
     marginTop && {marginTop: marginTop},
     marginBottom && {marginBottom: marginBottom},
+    marginLeft && {marginLeft: marginLeft},
+    marginRight && {marginRight: marginRight},
     padding && {padding: padding},
     paddingVertical && {paddingVertical: paddingVertical},
     paddingHorizontal && {paddingHorizontal: paddingHorizontal},
